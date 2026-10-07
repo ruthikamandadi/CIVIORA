@@ -1,0 +1,251 @@
+.report-content-shell {
+  width: min(100%, 820px);
+  margin: 0 auto;
+}
+
+.report-content-shell.is-submitted {
+  max-width: 820px;
+}
+
+.report-result-card {
+  --report-space: 20px;
+  --report-blue: #1f4d9a;
+  --report-blue-soft: #eff6ff;
+  --report-amber: #92400e;
+  --report-amber-soft: #fffbeb;
+  --report-indigo: #3730a3;
+  --report-indigo-soft: #eef2ff;
+
+  width: 100%;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.report-result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--report-space);
+}
+
+.report-result > .alert {
+  margin: 0;
+}
+
+.report-result-section {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--surface);
+}
+
+.report-ai-understanding {
+  border-color: #bfdbfe;
+  background: var(--report-blue-soft);
+}
+
+.report-duplicate-detection {
+  border-color: #fcd34d;
+  background: var(--report-amber-soft);
+}
+
+.report-result-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.report-ai-understanding .report-result-title {
+  color: var(--report-blue);
+}
+
+.report-duplicate-detection .report-result-title {
+  color: var(--report-amber);
+}
+
+.report-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.report-ai-field {
+  min-width: 0;
+}
+
+.report-ai-label {
+  margin-bottom: 3px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.report-ai-value {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.report-duplicate-copy {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.report-duplicate-copy strong {
+  color: var(--text);
+}
+
+.report-duplicate-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #fcd34d;
+  border-radius: 9px;
+  background: var(--surface);
+  color: #713f12;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.report-duplicate-note svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.report-review-link {
+  margin-top: 10px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: #854d0e;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.report-review-link:hover {
+  color: #713f12;
+}
+
+.report-priority-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.report-priority-score {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  flex: 0 0 68px;
+  place-items: center;
+  border: 3px solid var(--orange);
+  border-radius: 50%;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 21px;
+  font-weight: 850;
+}
+
+.report-priority-score-label {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.report-priority-urgency {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.report-root-cause {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid #c7d2fe;
+  border-radius: 10px;
+  background: var(--report-indigo-soft);
+  color: #312e81;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.report-root-cause svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.report-root-cause p {
+  margin: 0;
+}
+
+.report-priority-explanation {
+  margin-top: 14px;
+}
+
+.report-priority-explanation .btn {
+  min-height: 36px;
+  padding: 6px 13px;
+  border: 1px solid var(--border-dark);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.report-priority-explanation .btn:hover {
+  border-color: var(--primary-light);
+  background: var(--report-blue-soft);
+}
+
+.report-result-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.report-result-actions .btn {
+  min-height: 44px;
+  justify-content: center;
+}
+
+.report-result-actions .btn-primary:hover {
+  box-shadow: 0 8px 18px rgba(31, 77, 154, 0.24);
+}
+
+.report-result-actions .btn-outline:hover {
+  background: var(--surface-2);
+}
+
+@media (max-width: 900px) {
+  .report-ai-grid,
+  .report-result-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .report-result-card {
+    padding: 18px;
+  }
+
+  .report-result-section {
+    padding: 15px;
+  }
+}
